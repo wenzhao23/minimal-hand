@@ -43,7 +43,7 @@ def live_application(capture):
 
   # Defines the constants for hand retargeting
   left_right = 'left'
-  urdf_path = ('~/Downloads/data/hand/psyonic/ability_hand_' +
+  urdf_path = ('./urdf/psyonic/ability_hand_' +
                left_right + '.urdf')
 
   # The unit length in meters to normalize the absolute tracked
@@ -216,10 +216,10 @@ def live_application(capture):
   # Starts PyBullet GUI to visualize the retarged robot hand
   p.connect(p.GUI)
   p.setAdditionalSearchPath(
-    os.path.expanduser('~/Downloads/data/hand/psyonic'))
+    os.path.expanduser('./urdf/psyonic'))
   p.setGravity(0,0,-10)
   robot_id = p.loadURDF(
-    os.path.expanduser('~/Downloads/data/hand/psyonic/ability_hand_' +
+    os.path.expanduser('./urdf/psyonic/ability_hand_' +
                        left_right + '.urdf'),
     [0,0,0], p.getQuaternionFromEuler([0,0,0]), useFixedBase=True)
   p.resetDebugVisualizerCamera(cameraDistance=1.0, cameraYaw=200.8,
